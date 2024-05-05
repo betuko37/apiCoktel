@@ -132,6 +132,144 @@ body{
 .outer-list > li:hover .inner-list {
     display: block;
 }
+/*  section sin alcohol */
+.section3-title{
+    color: var(--Text-Color);
+    text-align: center;
+    padding: 0rem;
+    margin-bottom: 0rem;
+    font-family: var(--FontText4);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.linea{
+    align-items: center;
+    width: 1200px;
+    height: 1px;
+    background-color: #b7b7b7;
+}
+
+.container3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 35px;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .card {
+    display: flex;
+    padding: 8rem;
+    border-radius: 20px;
+    position: relative;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.611);
+    overflow: hidden;
+    box-shadow: 5px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+  
+  .card-content {
+    color: var(--Text-Color);
+    font-family: var(--FontText3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1.5rem;
+    z-index: 1; 
+  }
+  
+  .card p {
+    margin-top: 1rem;
+    width: 80%;
+  }
+
+  .card button{
+    margin: 4rem 0rem;
+    border: none;
+    padding: 10px 20px;
+    background-color: rgba(189, 189, 189, 0.758);
+    color: var(--Primary-Color);
+    border-radius: 2rem;
+    font-size: 1.3rem;
+    font-weight: 100;
+    font-family: var(--FontText4);
+    cursor: pointer;
+    transition: .4s;
+    
+  }
+
+  .card button:hover{
+    background-color: var(--Primary-Color);
+    color: var(--Text-Color);
+    border: 1px solid var(--Text-Color);
+  }
+  
+  
+  
+  .image1 {
+    grid-column: span 3; 
+    grid-row: 1;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('https://www.thecocktaildb.com/images/media/drink/qyqtpv1468876144.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .image2 {
+    grid-column: span 3; 
+    grid-row: 1;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('https://www.thecocktaildb.com/images/media/drink/wsyvrt1468876267.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+  
+  .image3 {
+    grid-column: span 3;
+    grid-row: 2;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('https://www.thecocktaildb.com/images/media/drink/uptxtv1468876415.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .image4 {
+    grid-column: span 3;
+    grid-row: 2;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('https://www.thecocktaildb.com/images/media/drink/syusvw1468876634.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .image5 {
+    grid-column: span 3;
+    grid-row: 3;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.4), black), url('https://www.thecocktaildb.com/images/media/drink/uqxqsy1468876703.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .image6 {
+    grid-column: span 3;
+    grid-row: 3;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.4), black), url('https://www.thecocktaildb.com/images/media/drink/vqquwx1472720634.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
 
 
