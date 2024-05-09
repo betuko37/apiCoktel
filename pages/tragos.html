@@ -52,7 +52,7 @@
                   </li>
                   <li>
                     <a class="box an r" href="../pages/randomBebida.html"
-                      >Uno Random</a
+                      >Juego Random</a
                     >
                   </li>
                 </ul>
@@ -66,11 +66,40 @@
       </div>
     </header>
 
+ <!-- Ventana emergente -->
+ <div class="popup-container" style="display: none;">
+      
+  <div class="popup-content">
+    <button id="close-button">X</button>
+    <h1 id="popup-title"></h1>
+    <img id="popup-image" src="" alt="">
+    <p id="popup-category"></p>
+    <p id="popup-instructions"></p>
+    <p id="popup-ingredients"></p>
+    
+  </div>
+</div>
+
+
     <!-- Cuerpo de la pagina -->
     <main>
       <!-- Seccion 1 -->
       <section class="section1">
         <h1>Aqui ira todo lo de tragos</h1>
+
+        <div class="containerTodos">
+          <div class="search">
+              <div >
+                <input type="text" id="searchInput" placeholder="Buscar coctel...">
+              </div>
+              <div>
+                <button class="r" onclick="searchCocktail()">Buscar</button>
+              </div>
+             
+              
+          </div>
+          <div class="cocktails" id="cocktailGrid"></div>
+          <div class="alphabet" id="alphabetLinks"></div>
       </section>
 
       <!-- Seccion 2 -->
@@ -130,6 +159,7 @@
     </div>
 
     <!-- scripts -->
+    <script src="../js/allCoktels.js"></script>
     <script src="../JS/random-color-hovers.js"></script>
   </body>
 </html>

@@ -7,7 +7,7 @@
     --Secondary-Color-Light: #E000E0;
     --Tercery-Color: #173D94;
     --Tercery-Color-Light: #2C4F9E;
-    --Text-Color: #DBDBDB;
+    --Text-Color: #b7b7b7;
     --MaxWidth: 1200px;
     --FontText1: "Bungee Inline";
     --FontText2: "Pacifico";
@@ -450,6 +450,29 @@ body{
     .contenedor_item{
         margin-top: 4rem;
     }
+    
+    .grid-container {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(5, 1fr) !important;
+        gap: 20px;
+    }
+
+    .card {
+        grid-column: 1 / span 1 !important; 
+        grid-row: auto !important; 
+    }
+
+    .card p {
+        margin-top: 1rem;
+        width: 90% !important;
+        font-size: 14px !important;
+      }
+
+      .card button{
+        margin: 1.2rem 0rem !important;
+        padding: 10px 20px;
+        
+      }
 
 }
 
@@ -459,11 +482,9 @@ body{
 .section1{
     color: #b7b7b7;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 80%;
     margin: auto;
-    padding: 2rem 10rem;
-    width: 100%;
+    margin-top: 5rem;
 }
 
 
@@ -527,39 +548,151 @@ body{
     display: block;
 }
 
-
-/* Seccion 2 */
-.section2{
-    height: 400px;
+/* SECCION 2 carrusel */
+.section2 {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 6rem;
+    margin-bottom: 10rem;
 }
 
-.glide__slide {
+.titulo2 {
+    margin-top: 2rem;
+}
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    position: relative; 
+    scroll-behavior: smooth; 
+    height: 300px;
+}
+
+
+.elemento {
+    position: relative;
+    flex: 0 0 auto;
+    width: 250px; 
+    margin-right: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 4px 1px 15px #591717;
+}
+
+.elemento .imagen-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.elemento .imagen-container img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.elemento .imagen-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 10px;
+    transition: opacity 0.3s; 
+    z-index: 1;
+    opacity: 0; 
+}
+
+.elemento:hover .imagen-container::after {
+    opacity: 1; 
+}
+
+
+.elemento .nombre {
+    padding: 10px;
+    background-color: rgba(58, 58, 58, 0.6);
+    color: var(--Text-Color);
+    font-family: var(--FontText4);
+    font-size: 22px;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Estilos para los botones de navegación */
+.btn-izquierda,
+.btn-derecha {
+    position: absolute;
+    top: 85%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.flechas{
+    font-size: 40px;
+    color: var(--Text-Color);
+}
+
+.btn-izquierda {
+    left: 200px;
+}
+
+.btn-derecha {
+    right: 200px;
+}
+
+.elemento:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.tit2{
     text-align: center;
-  }
-  .cocktail-image {
-    max-width: 200px;
-    margin: 0 auto;
-  }
+    font-size: 3rem;
+    font-family: var(--FontText4);
+    color: var(--Text-Color);
+    margin-bottom: 3rem;
+}
+
+
+
 
 
 
 
 
 /* SEccion 3 */
+.section3{
+    width: 80%;
+    margin: auto;
+    margin-top: 8rem;
+    margin-bottom: 10rem;
+}
+
 .section3-title{
     color: var(--Text-Color);
     text-align: center;
     padding: 0rem;
-    margin-bottom: 0rem;
+    margin-bottom: 1rem;
     font-family: var(--FontText4);
-    text-transform: uppercase;
     font-weight: bold;
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .linea{
     align-items: center;
-    width: 1200px;
+    width: 100%;
     height: 1px;
     background-color: #b7b7b7;
 }
@@ -577,8 +710,9 @@ body{
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 35px;
-    width: 80%;
+    width: 100%;
     margin: auto;
+    margin-top: 6rem;
   }
   
   .card {
@@ -589,7 +723,7 @@ body{
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.611);
     overflow: hidden;
-    box-shadow: 5px 4px 6px rgba(255, 255, 255, 0.1);
+    box-shadow: 5px 4px 6px rgba(182, 20, 210, 0.3);
 }
 
   
@@ -609,12 +743,14 @@ body{
   }
 
   .card button{
-    margin: 4rem 0rem;
+    position: relative;
+    top: 20px;
+    left: 0;
     border: none;
     padding: 10px 20px;
     background-color: rgba(189, 189, 189, 0.758);
     color: var(--Primary-Color);
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     font-size: 1.3rem;
     font-weight: 100;
     font-family: var(--FontText4);
@@ -676,9 +812,84 @@ body{
     background-repeat: no-repeat;
   }
   
+  /* contenedor flotante */
+  .popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 6;
+    overflow: none;
+  }
+  
+  .popup-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    margin: 7% auto;
+    padding: 20px;
+    border-radius: 25px;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    font-family: var(--FontText3);
+    font-size: 14px;
+  }
+  
+  .popup-content h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .popup-content img {
+    width: 50%;
+    margin: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .popup-content p {
+    margin-bottom: 10px;
+  }
+  
+  .popup-content button {
+    width: 8%;
+    position: relative;
+    top: 0;
+    left: 600px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup-content button:hover {
+    background-color: #555;
+  }
   
   
-  
+#popup-ingredients{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ingredient{
+    background-color: #dcdcdc;
+    margin: 3px;
+    padding: 1rem;
+    border-radius: 20px;
+}
   
   
 

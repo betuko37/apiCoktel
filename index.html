@@ -46,13 +46,13 @@
                     >
                   </li>
                   <li>
-                    <a class="box an r" href="pages/sinAlcohol.html" 
+                    <a class="box an r" href="pages/sinAlcohol.html"
                       >Sin Alcohol</a
                     >
                   </li>
                   <li>
                     <a class="box an r" href="pages/randomBebida.html"
-                      >Uno Random</a
+                      >Juego Random</a
                     >
                   </li>
                 </ul>
@@ -64,12 +64,24 @@
       </div>
     </header>
 
+    <!-- Ventana emergente -->
+    <div class="popup-container" style="display: none">
+      <div class="popup-content">
+        <button id="close-button">X</button>
+        <h1 id="popup-title"></h1>
+        <img id="popup-image" src="" alt="" />
+        <p id="popup-category"></p>
+        <p id="popup-instructions"></p>
+        <p id="popup-ingredients"></p>
+      </div>
+    </div>
+
     <!-- Cuerpo de la pagina -->
 
     <!-- Seccion 1 -->
     <section class="section1">
       <div class="containerinicio">
-        <div >
+        <div>
           <h1 class="inicio-titulo">Descubre nuestras recetas de cocteles!</h1>
         </div>
 
@@ -82,88 +94,97 @@
         </div>
 
         <div class="inicio-boton">
-          <button class="box r">Explora algunas Recetas !</button>
+          <button id="tragos" class="box r" >Explora algunas Recetas !</button>
         </div>
       </div>
 
-      <div class="contenedor_item" >
-        <img class="contenedor_img" src="src/img/thumb-1920-1017417.jpg" alt="" />
+      <div class="contenedor_item">
+        <img
+          class="contenedor_img"
+          src="src/img/thumb-1920-1017417.jpg"
+          alt=""
+        />
       </div>
     </section>
-
-
     <!-- Seccion 2 -->
     <div class="section2">
+      <div class="titulo2">
+        <h1 class="tit2">Bebidas Populares y Exitosas 😋</h1>
+      </div>
 
-      
-
+      <div class="carrusel" id="carousel"></div>
+      <div class="btn-izquierda" onclick="moverCarrusel(-2)">
+        <i class="bi bi-caret-left-fill flechas"></i>
+      </div>
+      <div class="btn-derecha" onclick="moverCarrusel(2)">
+        <i class="bi bi-caret-right-fill flechas"></i>
+      </div>
     </div>
-    
-
-
-
     <!-- Seccion 3 grid -->
     <div class="section3">
-
       <div class="container3">
         <div class="linea"></div>
-      <h1 class="section3-title">Catalogo - Enbriagador:</h1>
-      <div class="linea"></div>
+        <h1 class="section3-title">Catalogo rikolino 🤩</h1>
+        <div class="linea"></div>
       </div>
 
       <div class="grid-container">
-
         <div class="card image1">
           <div class="card-content">
             <h2>Cócteles Clásicos</h2>
-            <p>Descubre recetas tradicionales y contemporáneas de cócteles que han sido amadas por generaciones.</p>
+            <p>
+              Descubre recetas tradicionales y contemporáneas de cócteles que
+              han sido amadas por generaciones.
+            </p>
             <button class="">Ver Recetas ></button>
-          </div>  
+          </div>
         </div>
-  
+
         <div class="card image2">
           <div class="card-content">
             <h2>Bebidas Cotidianas</h2>
-            <p>Explora una variedad de bebidas simples y deliciosas que son ideales para disfrutar en cualquier momento.</p>
+            <p>
+              Explora una variedad de bebidas simples y deliciosas que son
+              ideales para disfrutar en cualquier momento.
+            </p>
             <button class="">Ver Recetas ></button>
-          </div>  
+          </div>
         </div>
-  
+
         <div class="card image3">
           <div class="card-content">
             <h2>Disparos Intensos (Shots)</h2>
-            <p>Prepárate para una experiencia de sabor explosiva con nuestra selección de shots.</p>
+            <p>
+              Prepárate para una experiencia de sabor explosiva con nuestra
+              selección de shots.
+            </p>
             <button class="">Ver Recetas ></button>
-          </div>  
+          </div>
         </div>
-  
+
         <div class="card image5">
           <div class="card-content">
             <h2>Cafés y Tés Especiales</h2>
-            <p>Descubre cómo llevar tu café y té al siguiente nivel con nuestras recetas únicas. </p>
+            <p>
+              Descubre cómo llevar tu café y té al siguiente nivel con nuestras
+              recetas únicas. #Esto no tiene nada de divertido xd
+            </p>
             <button class="">Ver Recetas ></button>
-          </div>  
+          </div>
         </div>
-  
+
         <div class="card image4">
           <div class="card-content">
             <h2>Ponches para Fiestas</h2>
-            <p>¡Celebra con estilo con nuestros ponches para fiestas!, combinaciones más exóticas</p>
+            <p>
+              ¡Celebra con estilo con nuestros ponches para fiestas!,
+              combinaciones más exóticas
+            </p>
             <button class="">Ver Recetas ></button>
-          </div>  
+          </div>
         </div>
-        
-  
       </div>
     </div>
-    <div class="section3">
-
-     
-  
-    
-    
-
-   
 
     <!-- Pie de página -->
     <div class="footer-container">
@@ -218,6 +239,7 @@
     </div>
 
     <!-- scripts -->
+    <script src="js/carrusel.js"></script>
     <script src="JS/random-color-hovers.js"></script>
   </body>
 </html>
