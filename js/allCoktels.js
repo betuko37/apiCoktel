@@ -109,7 +109,6 @@ function generateAlphabetLinks() {
     link.classList.add("linkxd");
     link.classList.add("box");
     link.onclick = () => filterByLetter(letter);
-
     alphabetLinks.appendChild(link);
   });
 }

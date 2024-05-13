@@ -59,6 +59,21 @@
     </div>
   </header>
 
+ <!-- Ventana emergente -->
+ <div class="popup-container" style="display: none;">
+      
+  <div class="popup-content">
+    <button id="close-button">X</button>
+    <h1 id="popup-title"></h1>
+    <img id="popup-image" src="" alt="">
+    <p id="popup-category"></p>
+    <p id="popup-instructions"></p>
+    <p id="popup-ingredients"></p>
+    
+  </div>
+</div>
+
+
   <!-- Cuerpo de la pagina -->
   <main>
     <!-- BANNER -->
@@ -72,56 +87,57 @@
   
   
 
-
-  <!-- RECOMENDADOS SLIDER -->
   <section class="recomendados">
-    
-      <h2>Productos Destacados</h2>
-        <div class="slider">
-            <div class="slide1">
-                <img src="../src/img/slider1.gif" alt="Producto 1">
-                <p>Bebidas Con Gas</p>
-            </div>
-            <div class="slide2">
-                <img src="../src/img/slider2.gif" alt="Producto 2">
-                <p>Tragos Frutales</p>
-            </div>
-            <div class="slide3">
-                <img src="../src/img/slider3.gif" alt="Producto 3">
-                <p>Cervezas Artesanales</p>
-            </div>
-            <div class="slide4">
-                <img src="../src/img/slider4.jpg" alt="Producto 4">
-                <p>Whiskys De Los Mas Ricos</p>
-            </div>
-            <div class="slide5">
-                <img src="../src/img/slider5.jpg" alt="Producto 5">
-                <p>Bebidas Con Vodka</p>
-            </div>
+    <h2>Productos Destacados</h2>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide">
+          <img src="../src/img/slider1.gif" alt="Producto 1">
+          <p>Bebidas Con Gas</p>
         </div>
+        <div class="slide">
+          <img src="../src/img/slider2.gif" alt="Producto 2">
+          <p>Tragos Frutales</p>
+        </div>
+        <div class="slide">
+          <img src="../src/img/slider3.gif" alt="Producto 3">
+          <p>Cervezas Artesanales</p>
+        </div>
+        <div class="slide">
+          <img src="../src/img/slider4.jpg" alt="Producto 4">
+          <p>Whiskys De Los Mas Ricos</p>
+        </div>
+        <div class="slide">
+          <img src="../src/img/slider5.jpg" alt="Producto 5">
+          <p>Bebidas Con Vodka</p>
+        </div>
+        <div class="slide">
+          <img src="../src/img/frape.jpeg" alt="Producto 5">
+          <p>Bebidas Con Vodka</p>
+        </div>
+        <div class="slide">
+          <img src="../src/img/Default_coctel_bebida_color_morada_1.jpg" alt="Producto 6">
+          <p>Bebidas Con Vodka</p>
+        </div>
+        <div class="slide">
+          <img src="../src/img/Default_Coctel_con_alcohol_preparado_0.jpg" alt="Producto 7">
+          <p>Bebidas Con Vodka</p>
+        </div>
+      </div>
+    </div>
   </section>
-
+  
   <!-- TEXTO DE PRODUCTOS -->
-  <section class="productos">
-      <h2>Productos</h2>
-      <!-- Aquí puedes agregar el texto sobre tus productos -->
-  </section>
+  <!-- Seccion 1 -->
+  <section class="section1">
 
+    <h1>Elije para volverte Loko 🤪 </h1>
 
-
-    <!-- Seccion 1 -->
-    <!-- Aqui ira todo lo de conAlcohol -->
-    <section class="section1" id="conAlcoholSection">
-
+    <div class="containerTodos">
+      <div class="cocktails" id="cocktailGrid"></div>
     </section>
 
-    <div class="ingredients">
-      <!-- Aquí se mostrarán los ingredientes -->
-    </div>
-    <!-- Seccion 2 -->
-    <section></section>
-
-    <div class="pagination" id="pagination"></div>
+    <div class="numberLinks" id="numberLinks"></div>
   </main>
 
   <!-- Pie de página -->

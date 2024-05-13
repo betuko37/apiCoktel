@@ -121,6 +121,7 @@ body{
     box-shadow: 1px 1px 20px rgb(28, 28, 28);
     background-color: rgba(14, 14, 14, 0.911);
     cursor: pointer;
+    z-index: 6;
 }
 
 /* Estilos para los elementos de la lista interna */

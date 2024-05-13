@@ -121,6 +121,7 @@ body{
     box-shadow: 1px 1px 20px rgb(28, 28, 28);
     background-color: rgba(14, 14, 14, 0.911);
     cursor: pointer;
+    z-index: 6;
 }
 
 /* Estilos para los elementos de la lista interna */
@@ -640,15 +641,16 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #f9f9f9;
+    background-color: rgb(20, 20, 20);
     margin: 7% auto;
     padding: 20px;
     border-radius: 25px;
     max-width: 700px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     z-index: 2;
     font-family: var(--FontText3);
     font-size: 14px;
+    color: var(--Text-Color);
   }
   
   .popup-content h1 {
@@ -696,7 +698,7 @@ body{
 }
 
 .ingredient{
-    background-color: #dcdcdc;
+    background-color: #373737;
     margin: 3px;
     padding: 1rem;
     border-radius: 20px;

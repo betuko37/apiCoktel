@@ -1,6 +1,6 @@
 // Manejar el envío del formulario
 document.getElementById('complaint-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+    event.preventDefault(); 
     
     // Obtener el texto de la queja o recomendación
     var complaintText = document.getElementById('complaint-text').value;
@@ -14,7 +14,6 @@ document.getElementById('complaint-form').addEventListener('submit', function(ev
   
   // Función para mostrar la queja o recomendación ingresada
   function displayComplaint(complaintText) {
-    // Crear un elemento de lista para mostrar la queja o recomendación
     var listItem = document.createElement('li');
     listItem.textContent = complaintText;
     

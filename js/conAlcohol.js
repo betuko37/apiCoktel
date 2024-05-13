@@ -1,94 +1,178 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const itemsPerPage = 12; 
-    const url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail';
+let currentPage = 1;
+const cocktailsPerPage = 20;
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const cocktails = data.drinks;
-            const totalItems = cocktails.length;
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            const paginationElement = document.getElementById('pagination');
+async function fetchAlcoholicCocktails(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.drinks || [];
+  } catch (error) {
+    console.error("Error:", error);
+    return [];
+  }
+}
 
-            function displayCocktails(page) {
-                const startIndex = (page - 1) * itemsPerPage;
-                const endIndex = startIndex + itemsPerPage;
-                const paginatedCocktails = cocktails.slice(startIndex, endIndex);
+async function fetchCocktailDetails(id) {
+  const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.drinks[0] || null;
+  } catch (error) {
+    console.error("Error fetching cocktail details:", error);
+    return null;
+  }
+}
 
-                const conAlcoholSection = document.getElementById('conAlcoholSection');
-                conAlcoholSection.innerHTML = '';
+async function filterByAlcoholic() {
+  const url =
+    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic";
+  const cocktails = await fetchAlcoholicCocktails(url);
+  if (cocktails.length > 0) {
+    displayCocktails(cocktails);
+  } else {
+    console.log("No se encontraron cócteles con alcohol");
+  }
+}
 
-                paginatedCocktails.forEach(cocktail => {
-                    const cocktailDiv = document.createElement('div');
-                    cocktailDiv.classList.add('cocktail');
-                    cocktailDiv.innerHTML = `
-                        <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}">
-                        <div class="back">
-                            <p class="ingredients">Ingredientes: ${getIngredients(cocktail)}</p>
-                        </div>
-                        <h2>${cocktail.strDrink}</h2>
-                    `;
-                    cocktailDiv.addEventListener('click', function() {
-                        this.querySelector('img').classList.toggle('flipped');
-                        this.querySelector('.back').classList.toggle('show-ingredients');
-                    });
-                    conAlcoholSection.appendChild(cocktailDiv);
-                });
-            
-            }
+function displayCocktails(cocktails) {
+  const closeButton = document.getElementById("close-button");
+  const cocktailGrid = document.getElementById("cocktailGrid");
+  const numberLinks = document.getElementById("numberLinks");
+  const popupContainer = document.querySelector(".popup-container"); 
 
-            function getIngredients(cocktail) {
-                let ingredients = '';
-                for (let i = 1; i <= 15; i++) {
-                    const ingredient = cocktail[`strIngredient${i}`];
-                    const measure = cocktail[`strMeasure${i}`];
-                    if (ingredient) {
-                        if (measure) {
-                            ingredients += `${ingredient}: ${measure}<br>`;
-                        } else {
-                            ingredients += `${ingredient}<br>`;
-                        }
-                    } else {
-                        break;
-                    }
-                }
-                return ingredients;
-            }
 
-            function setupPagination() {
-                paginationElement.innerHTML = '';
+  const startIndex = (currentPage - 1) * cocktailsPerPage;
+  const endIndex = startIndex + cocktailsPerPage;
+  const currentCocktails = cocktails.slice(startIndex, endIndex);
 
-                for (let i = 1; i <= totalPages; i++) {
-                    const pageLink = document.createElement('a');
-                    pageLink.classList.add('page-link');
-                    pageLink.textContent = i;
-                    pageLink.addEventListener('click', () => {
-                        displayCocktails(i);
-                    });
+  cocktailGrid.innerHTML = "";
+  currentCocktails.forEach((cocktail) => {
+    const cocktailElement = document.createElement("div");
+    cocktailElement.classList.add("cocktail");
+    cocktailElement.classList.add("r");
+    cocktailElement.innerHTML = `
+            <div class="coktail1">
+                <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}">
+            </div>
+            <div class="coktail2">
+                <h3>${cocktail.strDrink}</h3>
+            </div>
+        `;
+    cocktailElement.addEventListener("click", async function () {
+      const cocktailDetails = await fetchCocktailDetails(cocktail.idDrink);
+      if (cocktailDetails) {
+        document.getElementById("popup-title").textContent =
+          cocktailDetails.strDrink;
+        document.getElementById("popup-image").src =
+          cocktailDetails.strDrinkThumb;
+        document.getElementById(
+          "popup-category"
+        ).textContent = `Categoría: ${cocktailDetails.strCategory}`;
+        document.getElementById(
+          "popup-instructions"
+        ).textContent = `Instrucciones: ${cocktailDetails.strInstructions}`;
 
-                    paginationElement.appendChild(pageLink);
-                }
-            }
+        const ingredientsList = document.getElementById("popup-ingredients");
+        ingredientsList.innerHTML = "";
 
-            displayCocktails(1);
-            setupPagination();
-        })
-        .catch(error => console.log('Error al obtener los datos:', error));
+        for (let i = 1; i <= 15; i++) {
+          const ingredientName = cocktailDetails[`strIngredient${i}`];
+          const ingredientMeasure = cocktailDetails[`strMeasure${i}`];
+          if (ingredientName && ingredientMeasure) {
+            const ingredientDiv = document.createElement("div");
+            ingredientDiv.classList.add("ingredient");
+
+            const ingredientImg = document.createElement("img");
+            ingredientImg.src = `https://www.thecocktaildb.com/images/ingredients/${ingredientName}-Small.png`;
+            ingredientImg.alt = ingredientName;
+            ingredientImg.style.width = "50px";
+            ingredientImg.style.height = "50px";
+            ingredientDiv.appendChild(ingredientImg);
+
+            const ingredientText = document.createElement("p");
+            ingredientText.textContent = `${ingredientMeasure} de ${ingredientName}`;
+            ingredientDiv.appendChild(ingredientText);
+
+            ingredientsList.appendChild(ingredientDiv);
+          }
+        }
+
+        popupContainer.style.display = "block";
+      } else {
+        console.error("No se encontraron detalles del cóctel");
+      }
+    });
+
+    cocktailGrid.appendChild(cocktailElement);
+  });
+
+  // Actualizar los enlaces numerados
+  numberLinks.innerHTML = "";
+  const totalPages = Math.ceil(cocktails.length / cocktailsPerPage);
+  for (let i = 1; i <= totalPages; i++) {
+    const link = document.createElement("a");
+    link.href = "#";
+    link.textContent = i;
+    link.classList.add("linkxd");
+    link.classList.add("r");
+    link.onclick = () => {
+      currentPage = i;
+      displayCocktails(cocktails);
+    };
+
+    numberLinks.appendChild(link);
+  }
+
+  // Verificar si closeButton se ha encontrado correctamente
+  if (closeButton) {
+    // Si closeButton se ha encontrado, añadir un event listener para cerrar la ventana emergente
+    closeButton.addEventListener("click", function () {
+      // Código para cerrar la ventana emergente
+      popupContainer.style.display = "none";
+    });
+  } else {
+    console.error("closeButton not found");
+  }
+}
+
+function generateNumberLinks() {
+  const numbers = "1234567890";
+  const numberLinks = document.getElementById("numberLinks");
+
+  if (numberLinks) {
+    numbers.split("").forEach((number) => {
+      const link = document.createElement("a");
+      link.href = "#";
+      link.textContent = number;
+      link.classList.add("linkxd");
+      link.classList.add("box");
+      link.onclick = () => {
+        currentPage = parseInt(number);
+        displayCocktails(cocktails);
+      };
+
+      numberLinks.appendChild(link);
+    });
+  } else {
+    console.error('Element with id "numberLinks" not found');
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  filterByAlcoholic();
 });
 
-//CODIGO PARA EL SLIDER//
+generateNumberLinks();
 
-var slideIndex = 0;
-carousel();
+// CODIGO PARA EL SLIDER //
 
-function carousel() {
-    var i;
-    var slides = document.getElementsByClassName("slide");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(carousel, 2000); // Cambia la imagen cada 2 segundos
-}
+let slider = document.querySelector(".slider");
+
+slider.addEventListener("mouseenter", () => {
+  slider.style.animationPlayState = "paused";
+});
+
+slider.addEventListener("mouseleave", () => {
+  slider.style.animationPlayState = "running";
+});
