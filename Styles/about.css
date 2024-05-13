@@ -458,7 +458,7 @@ body{
   }
   
   .about-text h2 {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 0, 200);
     font-family: var(--FontText2);
     margin-bottom: 20px;
   }
@@ -480,7 +480,7 @@ body{
   }
   
   .contact-info h3 {
-    color: white;
+    color: rgb(255, 0, 200);
     font-family: var(--FontText2);
     margin-bottom: 20px;
   }
@@ -516,7 +516,7 @@ body{
   }
   
   #complaint-text {
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -554,10 +554,12 @@ body{
   }
   
   #complaints-list li {
-    background-color: #f9f9f9;
+    font-family: var(--FontText4);    
+    background-color: #000000;
+    color:var(--Text-Color);
     padding: 10px;
     margin-bottom: 5px;
-    border-radius: 5px;
+    border-radius: 7px;
     border: 1px solid #ccc;
   }
   
