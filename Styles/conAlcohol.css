@@ -428,3 +428,377 @@ body{
 
 /* Aqui seguir con los estilos cada quien */
 
+@font-face {
+    font-family: "GoodDog";
+    src: url("../src/fonts/GOODDP__.TTF") format("truetype");
+  }
+  /* ESTILOS DE LAS BEBIDAS API COCKTAIL*/
+  .cocktail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #120227;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(254, 255, 255, 0.87);
+    cursor: pointer;
+    perspective: 1000px; /* Añadimos perspectiva para la animación */
+  }
+
+  .cocktail img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.5s ease; /* Añadimos transición para la animación */
+  }
+
+  .cocktail .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1c063a;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg); /* Rotamos inicialmente la parte trasera */
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease; /* Añadimos transición para la animación */
+  }
+
+  .cocktail img.flipped + .back {
+    transform: rotateY(0deg); /* Volvemos a la posición normal */
+  }
+
+  .cocktail h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+
+  .cocktail p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+
+  .cocktail img:hover {
+    transform: scale(1.1); /* Escalamos la imagen al 110% */
+  }
+  
+  /* Estilos para la sección conAlcohol */
+  #conAlcoholSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    #conAlcoholSection {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+
+  /* ESTILOS DE LA NAVEGACION DE PAGINAS DE LOSPRODUCTOS API COCKTAIL */
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-link {
+    padding: 8px 16px;
+    margin: 0 5px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .page-link:hover {
+    background-color: #201d3b;
+    color: #fff;
+  }
+
+  .page-link.active {
+    background-color: #021e3b;
+    color: #fff;
+  }
+
+  /* ESTILO PARA OCULTAR LOS INGREDIENTES*/
+  .ingredients {
+    display: none;
+  }
+
+  /* ESTILO PARA MOSTRAR LOS INGREDIENTES DE CUANDO SE VOLTEA LA IMAGEN */
+  .cocktail img.flipped + .back .ingredients {
+    display: block;
+  }
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* ESTILOS PARA EL BANNER Y SUS TEXTOS */
+.banner{
+	background-image: linear-gradient(100deg, #020100, #4b030320),
+	url(../src/img/Cocktail\ Background\ Wallpaper\ Image\ For\ Free\ Download\ -\ Pngtree.jpg);
+	background-size: cover;
+	background-position: center;
+    transition: background-image 0.5s ease;
+}
+.content-banner {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 15rem 0;
+	
+}
+
+.content-banner p {
+	color: var(--primary-color);
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	font-weight: 300;
+    display: flex;
+    justify-content: center;
+    font-family: "GoodDog";
+    src: url("../src/fonts/GOODDP__.TTF") format("truetype");
+}
+
+.content-banner h2 {
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    font-family: "GoodDog";
+    src: url("../src/fonts/GOODDP__.TTF") format("truetype");
+}
+
+.content-banner a {
+	margin-top: 2rem;
+	text-decoration: none;
+	color: #000000;
+	background-color: var(--primary-color);
+	display: inline-block;
+	padding: 1rem 3rem;
+	text-transform: uppercase;
+	border-radius: 3rem;
+}
+
+.content-banner a:hover {
+	color: rgb(255, 255, 255);
+}
+
+.banner:hover {
+    background-image: linear-gradient(100deg, #4b030320, #020100), url(../src/img/Cocktail\ Background\ Wallpaper\ Image\ For\ Free\ Download\ -\ Pngtree.jpg);
+}
+
+
+.content-banner a {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #000000;
+    background-color: var(--primary-color);
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border-radius: 3rem;
+    transition: background-color 0.3s ease;
+}
+
+.content-banner a:hover {
+    background-color: #ffcc00; /* Cambia el color de fondo del botón al pasar el cursor sobre él */
+    color: #ffffff; /* Cambia el color del texto al pasar el cursor sobre el botón */
+}
+
+
+
+
+/* ESTILOS PARA EL SLIDER IMG Y ESTRUCUTRA */
+.recomendados {
+    background-color: #030303;
+    text-align: center;
+    font-family: "GoodDog";
+    src: url("../src/fonts/GOODDP__.TTF") format("truetype");
+}
+
+.recomendados h2 {
+    color: #ffffff;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.slide {
+    display: none;
+    width: 100%;
+    transition: opacity 0.5s;
+}
+.slide img {
+    width: 100%;
+    height: auto;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.prev {
+    left: 0;
+}
+.next {
+    right: 0;
+}
+
+.recomendados .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+/* ESTILOS PARA EL SLIDER */
+
+.recomendados .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px; 
+}
+
+.recomendados .slide1 {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 10px; 
+}
+
+.recomendados .slide2 {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 10px; 
+}
+
+.recomendados .slide3 {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 10px; 
+}
+
+.recomendados .slide4 {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 10px; 
+}
+
+.recomendados .slide5 {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 10px; 
+}
+
+.slider p{
+    padding: 8px;
+}
+
+.slide1 img{
+    width: 400px ;
+}
+
+.slide2 img{
+    width: 288px ;
+}
+
+.slide3 img{
+    width: 300px ;
+}
+
+.slide4 img{
+    width: 270px ;
+}
+
+.slide5 img{
+    width: 335px ;
+}
+
+
+
+
+.recomendados img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.recomendados img:hover {
+    transform: scale(1.05);
+}
+
+.productos {
+    background-color: #000000;
+    text-align: center;
+    font-family: "GoodDog";
+    src: url("../src/fonts/GOODDP__.TTF") format("truetype");
+}
+
+.productos h2 {
+    color: #ffffff;
+}
+
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1c063a;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease; /* Añadimos transición para la animación */
+    opacity: 0; /* Inicialmente oculto */
+    pointer-events: none; /* Inicialmente no interactuable */
+}
+
+.cocktail img.flipped + .back {
+    transform: rotateY(0deg); /* Volvemos a la posición normal */
+    opacity: 1; /* Hacer visible */
+    pointer-events: auto; /* Hacer interactuable */
+}
+
+.show-ingredients .ingredients {
+    display: block; /* Mostrar los ingredientes */
+}

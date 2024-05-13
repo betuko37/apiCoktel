@@ -428,3 +428,100 @@ body{
 
 /* Aqui seguir con los estilos cada quien */
 
+.about-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .about-text, .contact-info {
+    flex-basis: 45%;
+  }
+  
+  .about-text h2 {
+    color: var(--Secondary-Color);
+    font-family: var(--FontText2);
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    color: var(--Text-Color);
+    font-family: var(--FontText3);
+    margin-bottom: 15px;
+  }
+  
+  .contact-info h3 {
+    color: var(--Secondary-Color);
+    font-family: var(--FontText2);
+    margin-bottom: 20px;
+  }
+  
+  .contact-info p {
+    color: var(--Text-Color);
+    font-family: var(--FontText3);
+    margin-bottom: 10px;
+  }
+  
+  /* Hover para los íconos */
+  .bi {
+    transition: color 0.3s ease;
+  }
+  
+  .bi:hover {
+    color: var(--Secondary-Color);
+  }
+  
+  /* Transición para los datos de contacto */
+  .contact-info p {
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info p:hover {
+    color: var(--Secondary-Color);
+  }
+  
+/* Estilos para el formulario de buzón de quejas */
+#complaint-form {
+    margin-bottom: 20px;
+  }
+  
+  #complaint-text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Permite redimensionar verticalmente el área de texto */
+  }
+  
+  #complaint-text:focus {
+    outline: none; /* Elimina el contorno al enfocar el área de texto */
+    border-color: var(--Secondary-Color); /* Cambia el color del borde al enfocar */
+  }
+  
+  #complaint-form button {
+    padding: 10px 20px;
+    background-color: var(--Secondary-Color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #complaint-form button:hover {
+    background-color: var(--Secondary-Color-Light);
+  }
+  
+  /* Estilos para la lista de quejas o recomendaciones */
+  #complaints-list {
+    list-style-type: none;
+  }
+  
+  #complaints-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
