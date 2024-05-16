@@ -522,7 +522,7 @@ body{
     margin-bottom: 10px;
     border: 1px solid #8c8c8c;
     border-radius: 5px;
-    resize: vertical; /* Permite redimensionar verticalmente el área de texto */
+    resize: vertical; 
   }
   
   #complaint-text:focus {
@@ -548,7 +548,7 @@ body{
     background-color: var(--Secondary-Color-Light);
   }
   
-  /* Estilos para la lista de quejas o recomendaciones */
+  /* ESTILOS PARA LA LISTA DE QUEJAS Y RECOMENDACIONES */
   #complaints-list {
     list-style-type: none;
   }
