@@ -630,7 +630,7 @@ body{
 .btn-izquierda,
 .btn-derecha {
     position: absolute;
-    top: 85%;
+    top: 58rem;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -646,11 +646,11 @@ body{
 }
 
 .btn-izquierda {
-    left: 200px;
+    left: 100px;
 }
 
 .btn-derecha {
-    right: 200px;
+    right: 100px;
 }
 
 .elemento:hover {
@@ -831,11 +831,11 @@ body{
     display: flex;
     flex-direction: column;
     background-color: rgb(20, 20, 20);
-    margin: 7% auto;
+    margin: 4rem auto;
     padding: 20px;
     border-radius: 25px;
     max-width: 700px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    box-shadow: 4px 4px 18px rgba(172, 29, 143, 0.5);
     z-index: 2;
     font-family: var(--FontText3);
     font-size: 14px;
