@@ -7,7 +7,7 @@
     --Secondary-Color-Light: #E000E0;
     --Tercery-Color: #173D94;
     --Tercery-Color-Light: #2C4F9E;
-    --Text-Color: #b7b7b7;
+    --Text-Color: #DBDBDB;
     --MaxWidth: 1200px;
     --FontText1: "Bungee Inline";
     --FontText2: "Pacifico";
@@ -133,6 +133,144 @@ body{
 .outer-list > li:hover .inner-list {
     display: block;
 }
+/*  section sin alcohol */
+.section3-title{
+    color: var(--Text-Color);
+    text-align: center;
+    padding: 0rem;
+    margin-bottom: 0rem;
+    font-family: var(--FontText4);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.linea{
+    align-items: center;
+    width: 1200px;
+    height: 1px;
+    background-color: #b7b7b7;
+}
+
+.container3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 35px;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .card {
+    display: flex;
+    padding: 8rem;
+    border-radius: 20px;
+    position: relative;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.611);
+    overflow: hidden;
+    box-shadow: 5px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+  
+  .card-content {
+    color: var(--Text-Color);
+    font-family: var(--FontText3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1.5rem;
+    z-index: 1; 
+  }
+  
+  .card p {
+    margin-top: 1rem;
+    width: 80%;
+  }
+
+  .card button{
+    margin: 4rem 0rem;
+    border: none;
+    padding: 10px 20px;
+    background-color: rgba(189, 189, 189, 0.758);
+    color: var(--Primary-Color);
+    border-radius: 2rem;
+    font-size: 1.3rem;
+    font-weight: 100;
+    font-family: var(--FontText4);
+    cursor: pointer;
+    transition: .4s;
+    
+  }
+
+  .card button:hover{
+    background-color: var(--Primary-Color);
+    color: var(--Text-Color);
+    border: 1px solid var(--Text-Color);
+  }
+  
+  
+  
+  .image1 {
+    grid-column: span 3; 
+    grid-row: 1;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('https://www.thecocktaildb.com/images/media/drink/qyqtpv1468876144.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .image2 {
+    grid-column: span 3; 
+    grid-row: 1;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('https://www.thecocktaildb.com/images/media/drink/wsyvrt1468876267.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+  
+  .image3 {
+    grid-column: span 3;
+    grid-row: 2;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('https://www.thecocktaildb.com/images/media/drink/uptxtv1468876415.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .image4 {
+    grid-column: span 3;
+    grid-row: 2;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('https://www.thecocktaildb.com/images/media/drink/syusvw1468876634.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .image5 {
+    grid-column: span 3;
+    grid-row: 3;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.4), black), url('https://www.thecocktaildb.com/images/media/drink/uqxqsy1468876703.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .image6 {
+    grid-column: span 3;
+    grid-row: 3;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.4), black), url('https://www.thecocktaildb.com/images/media/drink/vqquwx1472720634.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
 
 
@@ -388,14 +526,6 @@ body{
     background-color: rgb(9, 9, 9);
 }
 
-.containerinicio h1 {
-    font-size: 2.5rem !important;
-}
-
-.containerinicio h4 {
-    font-size: 0.9rem !important;
-}
-
 }
 
 
@@ -432,389 +562,98 @@ body{
         display: none;
     }
 
-    .section1{
-        flex-direction: column;
-        padding: 3rem !important;
-        text-align: center !important;
-    }
-
-    .containerinicio h1{
-        font-size: 2.5rem  !important;
-        text-align: center !important;
-    }
-
-    .containerinicio {
-        margin-left: 1.5rem !important;
-    }
-
-    .contenedor_item{
-        margin-top: 4rem;
-    }
-    
-    .grid-container {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: repeat(5, 1fr) !important;
-        gap: 20px;
-    }
-
-    .card {
-        grid-column: 1 / span 1 !important; 
-        grid-row: auto !important; 
-    }
-
-    .card p {
-        margin-top: 1rem;
-        width: 90% !important;
-        font-size: 14px !important;
-      }
-
-      .card button{
-        margin: 1.2rem 0rem !important;
-        padding: 10px 20px;
-        
-      }
-
 }
 
 
 /* Aqui seguir con los estilos cada quien */
 
-.section1{
-    color: #b7b7b7;
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cocktails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    justify-items: center; 
+}
+
+.cocktail{
     display: flex;
-    width: 80%;
-    margin: auto;
-    margin-top: 5rem;
-}
-
-
-.containerinicio {
-    width: 100%;
-    margin-right: 4rem;
-    margin-top: 2rem;
-}
-
-.containerinicio h1{
-    font-family: var(--FontText4);
-    font-size: 3.5rem;
-    text-align: start;
-    text-transform: uppercase;
-}
-
-.containerinicio h4{
-    margin-top: 2rem;
-    font-family: var(--FontText3);
-    font-size: 1rem;
-    font-weight: 400;
-    color: #b7b7b7;
-}
-
-.containerinicio button{
-    margin-top: 3rem;
-    border: none;
-    padding: 1rem 2rem;
-    background-color: transparent;
-    color: var(--Text-Color);
-    border-radius: 2rem;
-    font-size: 1.3rem;
-    font-weight: 100;
-    font-family: var(--FontText4);
-    border: 2px solid var(--Text-Color);
-    cursor: pointer;
-    transition: .4s;
-}
-
-
-.contenedor_item{
-    width: 70%;
-    position: relative;
-
-    
-}
-
-.contenedor_item::before{
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    background: linear-gradient(rgb(0, 0, 0),rgba(255, 255, 255, 0), black);
-
-}
-
-.contenedor_img{
-    margin-left: 9rem;
-    width: 45%;
-    display: block;
-}
-
-/* SECCION 2 carrusel */
-.section2 {
-    width: 80%;
-    margin: auto;
+    flex-direction: column;
     text-align: center;
-    margin-top: 6rem;
-    margin-bottom: 10rem;
-}
-
-.titulo2 {
-    margin-top: 2rem;
-}
-
-.carrusel {
-    display: flex;
     align-items: center;
-    margin-bottom: 2rem;
-    overflow-x: hidden; 
-    overflow-y: hidden; 
-    position: relative; 
-    scroll-behavior: smooth; 
-    height: 300px;
-}
-
-
-.elemento {
+    width: 200px;
+    height: 200px;
     position: relative;
-    flex: 0 0 auto;
-    width: 250px; 
-    margin-right: 60px;
-    border-radius: 10px;
-    overflow: hidden;
+    border-radius: 20px;
     cursor: pointer;
-    box-shadow: 4px 1px 15px #591717;
-}
-
-.elemento .imagen-container {
-    position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    box-shadow: 1px 1px 15px #423b3b;
 }
 
-.elemento .imagen-container img {
+.cocktail:hover{
+    transition: .4s;
+    transform: scale(1.1);
+}
+
+.cocktail img {
     width: 100%;
-    height: 200px; 
+    height: 98%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
-.elemento .imagen-container::after {
+.cocktail::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); 
-    border-radius: 10px;
-    transition: opacity 0.3s; 
-    z-index: 1;
-    opacity: 0; 
-}
-
-.elemento:hover .imagen-container::after {
-    opacity: 1; 
-}
-
-
-.elemento .nombre {
-    padding: 10px;
-    background-color: rgba(58, 58, 58, 0.6);
-    color: var(--Text-Color);
-    font-family: var(--FontText4);
-    font-size: 22px;
-    border-radius: 0 0 10px 10px;
-}
-
-/* Estilos para los botones de navegación */
-.btn-izquierda,
-.btn-derecha {
-    position: absolute;
-    top: 58rem;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1;
-
-}
-
-.flechas{
-    font-size: 40px;
-    color: var(--Text-Color);
-}
-
-.btn-izquierda {
-    left: 100px;
-}
-
-.btn-derecha {
-    right: 100px;
-}
-
-.elemento:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
-}
-
-.tit2{
-    text-align: center;
-    font-size: 3rem;
-    font-family: var(--FontText4);
-    color: var(--Text-Color);
-    margin-bottom: 3rem;
-}
-
-
-
-
-
-
-
-
-/* SEccion 3 */
-.section3{
-    width: 80%;
-    margin: auto;
-    margin-top: 8rem;
-    margin-bottom: 10rem;
-}
-
-.section3-title{
-    color: var(--Text-Color);
-    text-align: center;
-    padding: 0rem;
-    margin-bottom: 1rem;
-    font-family: var(--FontText4);
-    font-weight: bold;
-    font-size: 3rem;
-}
-
-.linea{
-    align-items: center;
-    width: 100%;
-    height: 1px;
-    background-color: #b7b7b7;
-}
-
-.container3{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 35px;
-    width: 100%;
-    margin: auto;
-    margin-top: 6rem;
-  }
-  
-  .card {
-    display: flex;
-    padding: 8rem;
+    background-color: rgba(0, 0, 0, 0.4); 
     border-radius: 20px;
-    position: relative;
-    flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.611);
-    overflow: hidden;
-    box-shadow: 5px 4px 6px rgba(182, 20, 210, 0.3);
+    transition: 0.3s; 
+    z-index: 1;
 }
 
-  
-  .card-content {
-    color: var(--Text-Color);
+.cocktail:hover::after {
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.cocktail h3 {
+    font-size: 28px;
     font-family: var(--FontText3);
     position: absolute;
-    top: 0;
-    left: 0;
-    margin: 1.5rem;
-    z-index: 1; 
-  }
-  
-  .card p {
-    margin-top: 1rem;
-    width: 80%;
-  }
-
-  .card button{
-    position: relative;
-    top: 20px;
-    left: 0;
-    border: none;
-    padding: 10px 20px;
-    background-color: rgba(189, 189, 189, 0.758);
-    color: var(--Primary-Color);
-    border-radius: 0.5rem;
-    font-size: 1.3rem;
-    font-weight: 100;
-    font-family: var(--FontText4);
-    cursor: pointer;
-    transition: .4s;
-    
-  }
-
-  .card button:hover{
-    background-color: var(--Primary-Color);
-    color: var(--Text-Color);
-    border: 1px solid var(--Text-Color);
-  }
-  
-  
-  
-  .image1 {
-    grid-column: span 3; 
-    grid-row: 1;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('../src/img/Default_coctel_bebida_color_rojo_0.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .image2 {
-    grid-column: span 3; 
-    grid-row: 1;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('../src/img/Default_coctel_bebida_color_azul_1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: rgba(204, 204, 204, 0.812); 
+    z-index: 2;
+    padding: 30px; 
 }
-  
-  .image3 {
-    grid-column: span 2;
-    grid-row: 2;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('../src/img/Default_coctel_bebida_color_verde_0.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .image4 {
-    grid-column: span 2;
-    grid-row: 2;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url('../src/img/Default_coctel_bebida_color_morada_1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .image5 {
-    grid-column: span 2;
-    grid-row: 2;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.4), black), url('../src/img/Default_Coctel_con_alcohol_preparado_0.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  /* contenedor flotante */
-  .popup-container {
+
+.alphabet {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.alphabet a {
+    padding: 1rem;
+    text-decoration: none;
+    color: #5c5c5c;
+    font-size: 22px;
+    margin-right: 3px;
+    font-family: var(--FontText4);
+
+}
+
+
+/* contenedor flotante */
+.popup-container {
     display: none;
     position: fixed;
     top: 0;
@@ -892,10 +731,13 @@ body{
     padding: 1rem;
     border-radius: 20px;
 }
-  
-  
 
 
-
-
-  
+.titulo3{
+    color: var(--Text-Color);
+    text-align: center;
+    font-family: var(--FontText4);
+    font-size: 24px;
+    margin-top:1rem ;
+    margin-bottom: 4rem;
+}

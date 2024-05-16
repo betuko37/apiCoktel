@@ -3,9 +3,35 @@ const carrusel = document.querySelector(".carrusel");
 const btnIzquierda = document.querySelector(".btn-izquierda");
 const btnDerecha = document.querySelector(".btn-derecha");
 
+
+
+//seccion de botones
 document.getElementById("tragos").addEventListener("click", function () {
   window.location.href = "pages/tragos.html";
 });
+
+document.getElementById("shots").addEventListener("click", function () {
+  window.location.href = "pages/shots.html";
+});
+
+document.getElementById("clasicos").addEventListener("click", function () {
+  window.location.href = "pages/clasicos.html";
+});
+
+document.getElementById("cotidianas").addEventListener("click", function () {
+  window.location.href = "pages/cotidianas.html";
+});
+
+document.getElementById("cafes").addEventListener("click", function () {
+  window.location.href = "pages/cafesyte.html";
+});
+
+document.getElementById("ponches").addEventListener("click", function () {
+  window.location.href = "pages/ponches.html";
+});
+
+
+
 
 btnIzquierda.addEventListener("click", () => {
   carrusel.scrollLeft -= 300;

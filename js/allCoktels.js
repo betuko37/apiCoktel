@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function () {
+  fetchCategories();
+  filterByLetter("a");
+  generateAlphabetLinks();
+});
+
 async function fetchCocktails(url) {
   try {
     const response = await fetch(url);
@@ -6,6 +12,29 @@ async function fetchCocktails(url) {
   } catch (error) {
     console.error("Error:", error);
     return null;
+  }
+}
+
+async function fetchCategories() {
+  const url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list';
+  const categories = await fetchCocktails(url);
+  if (categories) {
+    const categorySelect = document.getElementById('categorySelect');
+    categories.forEach(category => {
+      const option = document.createElement('option');
+      option.value = category.strCategory;
+      option.textContent = category.strCategory;
+      categorySelect.appendChild(option);
+    });
+
+    categorySelect.addEventListener('change', function () {
+      const selectedCategory = this.value;
+      if (selectedCategory) {
+        filterByCategory(selectedCategory);
+      } else {
+        document.getElementById('cocktailGrid').innerHTML = '';
+      }
+    });
   }
 }
 
@@ -26,26 +55,33 @@ async function filterByLetter(letter) {
   }
 }
 
+async function filterByCategory(category) {
+  const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`;
+  const cocktails = await fetchCocktails(url);
+  if (cocktails) {
+    displayCocktails(cocktails);
+  }
+}
+
 function displayCocktails(cocktails) {
-  const closeButton = document.getElementById('close-button');
   const cocktailGrid = document.getElementById("cocktailGrid");
-  cocktailGrid.innerHTML = "";
   const popupContainer = document.querySelector(".popup-container");
+  const closeButton = document.getElementById('close-button');
+  cocktailGrid.innerHTML = "";
 
   cocktails.forEach((cocktail) => {
     const cocktailElement = document.createElement("div");
     cocktailElement.classList.add("cocktail");
     cocktailElement.classList.add("r");
     cocktailElement.innerHTML = `
-            <div class="coktail1">
+            <div class="cocktail1">
                 <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}">
             </div>
-            <div class="coktail2">
+            <div class="cocktail2">
                 <h3>${cocktail.strDrink}</h3>
             </div>
         `;
     cocktailElement.addEventListener("click", function () {
-    
       document.getElementById("popup-title").textContent = cocktail.strDrink;
       document.getElementById("popup-image").src = cocktail.strDrinkThumb;
       document.getElementById(
@@ -73,7 +109,7 @@ function displayCocktails(cocktails) {
           ingredientDiv.appendChild(ingredientImg);
 
           const ingredientText = document.createElement("p");
-          ingredientText.textContent = `${ingredientMeasure} de ${ingredientName}`;
+          ingredientText.textContent = `${ingredientMeasure ? ingredientMeasure : ''} ${ingredientName}`;
           ingredientDiv.appendChild(ingredientText);
 
           ingredientsList.appendChild(ingredientDiv);
@@ -87,15 +123,14 @@ function displayCocktails(cocktails) {
   });
 
   // Verificar si closeButton se ha encontrado correctamente
-if (closeButton) {
+  if (closeButton) {
     // Si closeButton se ha encontrado, añadir un event listener para cerrar la ventana emergente
-    closeButton.addEventListener('click', function() {
-        // Código para cerrar la ventana emergente
-        popupContainer.style.display = 'none';
+    closeButton.addEventListener('click', function () {
+      popupContainer.style.display = 'none';
     });
-} else {
+  } else {
     console.error('closeButton not found');
-}
+  }
 }
 
 function generateAlphabetLinks() {
@@ -108,13 +143,11 @@ function generateAlphabetLinks() {
     link.textContent = letter.toUpperCase();
     link.classList.add("linkxd");
     link.classList.add("box");
-    link.onclick = () => filterByLetter(letter);
+    link.onclick = (event) => {
+      event.preventDefault();
+      filterByLetter(letter);
+    };
     alphabetLinks.appendChild(link);
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  filterByLetter("a");
-});
-
-generateAlphabetLinks();

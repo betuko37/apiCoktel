@@ -704,3 +704,13 @@ body{
     border-radius: 20px;
 }
 
+#categorySelect{
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-family: var(--FontText3);
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 1px;
+    background-color: var(--Text-Color);
+}
